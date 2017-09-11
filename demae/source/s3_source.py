@@ -7,7 +7,8 @@ from ..util import split_size
 
 
 class S3Source:
-    def __init__(self,
+    def __init__(
+        self,
         bucket,
         prefix,
         columns=[],

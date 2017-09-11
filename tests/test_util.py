@@ -1,4 +1,3 @@
-import os
 from demae.util import split_size
 
 

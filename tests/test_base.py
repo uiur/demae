@@ -12,6 +12,8 @@ from demae import Base
 from demae.source import S3Source
 from demae.dest import S3Dest
 
+BUCKET = 's3-bucket'
+
 
 def upload_as_gzipped_tsv(key, data):
     df = pd.DataFrame(data)
@@ -39,14 +41,13 @@ def create_buckets():
     s3 = boto3.resource('s3')
     s3.create_bucket(Bucket=BUCKET)
 
-BUCKET = 's3-bucket'
 
 class Batch(Base):
     source = S3Source(
         bucket=BUCKET,
         prefix='development/foo/foo.tsv',
         columns=['id', 'text'],
-        parallel_env={ 'index': 'PARALLEL_INDEX', 'size': 'PARALLEL_SIZE' },
+        parallel_env={'index': 'PARALLEL_INDEX', 'size': 'PARALLEL_SIZE'},
         target_key_env='SOURCE_KEY_ONLY',
     )
 
