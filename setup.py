@@ -14,7 +14,7 @@ test_requirements = [
 
 setup(
     name='demae',
-    version='0.8.0',
+    version='0.8.1',
     description="",
     author="Kazato Sugimoto",
     author_email='kazato.sugimoto@gmail.com',
