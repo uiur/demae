@@ -21,6 +21,8 @@ setup(
     url='https://github.com/uiureo/demae',
     packages=[
         'demae',
+        'demae.source',
+        'demae.dest',
     ],
     package_dir={'demae':
                  'demae'},
