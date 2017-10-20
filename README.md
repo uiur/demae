@@ -1,4 +1,7 @@
 # demae
+[![Build Status](https://travis-ci.org/uiureo/demae.svg?branch=master)](https://travis-ci.org/uiureo/demae)
+[![PyPI version](https://badge.fury.io/py/demae.svg)](https://badge.fury.io/py/demae)
+
 demae is a framework to build a batch program using Machine Learning.
 Makes it easier to deploy your ML model into production.
 
