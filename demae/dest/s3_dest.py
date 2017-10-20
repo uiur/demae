@@ -2,6 +2,7 @@ import pandas as pd
 import gzip
 import boto3
 import re
+import io
 
 
 def default_key_map(key):
@@ -22,7 +23,7 @@ class S3Dest():
         dest_key = self.key_map(obj.key)
 
         s3 = boto3.resource('s3')
-        s3.Object(obj.bucket_name, dest_key).put(Body=body)
+        s3.Object(obj.bucket_name, dest_key).upload_fileobj(io.BytesIO(body))
 
     def generate_output_file(self, data):
         df = pd.DataFrame(data)
